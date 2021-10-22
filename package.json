@@ -1,0 +1,21 @@
+{
+  "name": "spring-codegen",
+  "description": "Simple Spring Boot code generator",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "author": {
+    "email": "ntduy.cs@gmail.com",
+    "name": "Duy Nguyen-Thanh"
+  },
+  "keywords": [
+    "java",
+    "maven",
+    "spring",
+    "codegen"
+  ],
+  "dependencies": {
+    "command-line-args": "^5.2.0",
+    "ncp": "^2.0.0"
+  }
+}
