@@ -2,7 +2,7 @@
   "name": "spring-codegen",
   "description": "Simple Spring Boot code generator",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "lib/index.js",
   "license": "MIT",
   "author": {
     "email": "ntduy.cs@gmail.com",
@@ -14,8 +14,21 @@
     "spring",
     "codegen"
   ],
+  "homepage": "https://github.com/ntduycs/simple-spring-gen#readme",
+  "repository": "github:ntduycs/simple-spring-gen",
   "dependencies": {
     "command-line-args": "^5.2.0",
-    "ncp": "^2.0.0"
+    "fs-extra": "^10.0.0",
+    "js-yaml": "^4.1.0",
+    "replace-in-file": "^6.3.2",
+    "shelljs": "^0.8.4",
+    "xml2js": "^0.4.23"
+  },
+  "bin": {
+    "simple-spring-gen": "lib/index.js"
+  },
+  "scripts": {
+    "start": "node lib/index.js",
+    "simple-spring-gen": "node lib/index.js"
   }
 }

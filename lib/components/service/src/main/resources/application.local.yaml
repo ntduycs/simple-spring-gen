@@ -1,0 +1,25 @@
+server:
+  port: 8000
+  error:
+    include-message: always
+    include-exception: true
+    include-binding-errors: always
+    whitelabel:
+      enabled: false
+
+spring:
+  cloud:
+    config:
+      enabled: false
+
+security:
+  oauth2:
+    client:
+      client-id: WebClient
+      client-secret: W20e20b
+    resource:
+      user-info-uri: http://localhost:9000/uaa/oauth/token
+      check-token-endpoint-url: http://localhost:9000/uaa/oauth/check_token
+
+
+
