@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package demo;
+
+import "demo/common/common.proto";
+
+option java_package = "com.example.demo.proto";
+option java_multiple_files = true;
+
+service SampleService {
+  rpc CreateSample(CreateSampleRequest) returns (CreateSampleResponse) {};
+}
+
+message CreateSampleRequest {
+  string firstname = 1;
+  string lastname = 2;
+  optional int32 age = 3;
+}
+
+message CreateSampleResponse {
+  message Data {
+    int64 sample_id = 1;
+    string firstname = 2;
+    string lastname = 3;
+    optional int32 age = 4;
+  }
+
+  bool success = 1;
+  oneof response {
+    Data data = 2;
+    common.DemoError error = 3;
+  }
+}

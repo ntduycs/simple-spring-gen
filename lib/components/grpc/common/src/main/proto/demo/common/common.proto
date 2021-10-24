@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package demo.common;
+
+option java_package = "com.example.demo.proto.common";
+option java_multiple_files = true;
+
+enum DemoErrorCode {
+  UNKNOWN = 0;
+  BAD_REQUEST = 1;
+  UNAUTHENTICATED = 2;
+  PERMISSION_DENIED = 3;
+  NOT_FOUND = 4;
+  ALREADY_EXISTS = 5;
+  TIMEOUT = 6;
+
+  // TODO: Add more codes on your service demand
+}
+
+message DemoError {
+  DemoErrorCode code = 1;
+  string message = 2;
+  map<string, string> errors = 3;
+}
