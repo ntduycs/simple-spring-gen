@@ -1,8 +1,8 @@
 package com.example.demo.kafka.consumer;
 
 import com.example.demo.kafka.DemoKafkaTopic;
-import com.example.demo.kafka.message.DemoCommandMessage;
-import com.example.demo.kafka.message.DemoTrackingMessage;
+import com.example.demo.kafka.message.SampleCommandMessage;
+import com.example.demo.kafka.message.SampleTrackingMessage;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.log4j.Log4j2;
@@ -14,18 +14,18 @@ import org.springframework.stereotype.Component;
 @Component
 @KafkaListener(topics = {
         DemoKafkaTopic.DEMO_TOPIC
-}, containerFactory = "demoKafkaListenerContainerFactory", groupId = "sample")
+}, containerFactory = "DemoKafkaListenerContainerFactory", groupId = "sample")
 @Log4j2
-public class DemoConsumer {
+public class DemoKafkaConsumer {
 
     private final ObjectMapper objectMapper;
 
-    public DemoConsumer(ObjectMapper objectMapper) {
+    public DemoKafkaConsumer(ObjectMapper objectMapper) {
         this.objectMapper = objectMapper;
     }
 
     @KafkaHandler
-    public void consumeDemoCommandMessage(@Payload DemoCommandMessage commandRequest) {
+    public void consumeDemoCommandMessage(@Payload SampleCommandMessage commandRequest) {
         log.info("Consume {} with command {} and content {} {}",
                 commandRequest.getClass().getSimpleName(),
                 commandRequest.getCommand(),
@@ -34,7 +34,7 @@ public class DemoConsumer {
     }
 
     @KafkaHandler
-    public void consumerDemoTrackingMessage(@Payload DemoTrackingMessage trackingRequest) {
+    public void consumerDemoTrackingMessage(@Payload SampleTrackingMessage trackingRequest) {
         log.info("Consume {} with content {} {}",
                 trackingRequest.getClass().getSimpleName(),
                 trackingRequest.getFirstname(),

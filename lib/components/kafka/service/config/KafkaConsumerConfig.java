@@ -24,8 +24,8 @@ public class KafkaConsumerConfig {
         this.environment = environment;
     }
 
-    @Bean("demoConsumerFactory")
-    ConsumerFactory<String, Object> demoConsumerFactory() {
+    @Bean("DemoKafkaConsumerFactory")
+    ConsumerFactory<String, Object> customerConsumerFactory() {
         Map<String, Object> configMap = new HashMap<>();
 
         configMap.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, environment.getRequiredProperty("spring.kafka.bootstrap-servers"));
@@ -37,10 +37,10 @@ public class KafkaConsumerConfig {
         return new DefaultKafkaConsumerFactory<>(props);
     }
 
-    @Bean("demoKafkaListenerContainerFactory")
-    ConcurrentKafkaListenerContainerFactory<String, Object> demoKafkaListenerContainerFactory() {
+    @Bean("DemoKafkaListenerContainerFactory")
+    ConcurrentKafkaListenerContainerFactory<String, Object> customKafkaListenerContainerFactory() {
         ConcurrentKafkaListenerContainerFactory<String, Object> factory = new ConcurrentKafkaListenerContainerFactory<>();
-        factory.setConsumerFactory(jsonConsumerFactory());
+        factory.setConsumerFactory(customerConsumerFactory());
 
         return factory;
     }

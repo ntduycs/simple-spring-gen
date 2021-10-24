@@ -22,8 +22,8 @@ public class KafkaProducerConfig {
         this.environment = environment;
     }
 
-    @Bean("demoProducerFactory")
-    ProducerFactory<String, Object> demoProducerFactory() {
+    @Bean("DemoKafkaProducerFactory")
+    ProducerFactory<String, Object> customProducerFactory() {
         Map<String, Object> configMap = new HashMap<>();
         configMap.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, environment.getRequiredProperty("spring.kafka.bootstrap-servers"));
 
@@ -49,9 +49,9 @@ public class KafkaProducerConfig {
         return new DefaultKafkaProducerFactory<>(configMap);
     }
 
-    @Bean("demoKafkaTemplate")
-    KafkaTemplate<String, Object> demoKafkaTemplate() {
-        return new KafkaTemplate<>(jsonProducerFactory());
+    @Bean("DemoKafkaTemplate")
+    KafkaTemplate<String, Object> customKafkaTemplate() {
+        return new KafkaTemplate<>(customProducerFactory());
     }
 
 }

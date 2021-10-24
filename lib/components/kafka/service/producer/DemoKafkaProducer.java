@@ -16,16 +16,16 @@ import java.util.Map;
 
 @Component
 @Log4j2
-public class DemoProducer {
+public class DemoKafkaProducer {
 
     private final KafkaTemplate<String, Object> kafkaTemplate;
 
-    public DemoProducer(KafkaTemplate<String, Object> kafkaTemplate) {
+    public DemoKafkaProducer(KafkaTemplate<String, Object> kafkaTemplate) {
         this.kafkaTemplate = kafkaTemplate;
     }
 
     public void sendSampleCommandMessage() {
-        DemoCommandMessage message = DemoCommandMessage.newBuilder()
+        SampleCommandMessage message = SampleCommandMessage.newBuilder()
                 .setCommand(DemoKafkaCommand.INSERT_USER)
                 .setFirstname("Duy")
                 .setLastname("Nguyen Thanh")
@@ -35,7 +35,7 @@ public class DemoProducer {
     }
 
     public void sendSampleTrackingMessage() {
-        DemoTrackingMessage message = DemoTrackingMessage.newBuilder()
+        SampleTrackingMessage message = SampleTrackingMessage.newBuilder()
                 .setFirstname("Duy")
                 .setLastname("Nguyen Thanh")
                 .build();
