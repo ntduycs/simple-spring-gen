@@ -28,6 +28,6 @@ message CreateSampleResponse {
   bool success = 1;
   oneof response {
     Data data = 2;
-    common.DemoError error = 3;
+    common.DemoGrpcError error = 3;
   }
 }

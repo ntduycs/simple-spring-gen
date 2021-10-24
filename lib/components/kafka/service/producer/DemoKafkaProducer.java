@@ -2,8 +2,8 @@ package com.example.demo.kafka.producer;
 
 import com.example.demo.kafka.DemoKafkaCommand;
 import com.example.demo.kafka.DemoKafkaTopic;
-import com.example.demo.kafka.message.DemoCommandMessage;
-import com.example.demo.kafka.message.DemoTrackingMessage;
+import com.example.demo.kafka.message.SampleCommandMessage;
+import com.example.demo.kafka.message.SampleTrackingMessage;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.support.SendResult;

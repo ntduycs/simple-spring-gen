@@ -3,9 +3,3 @@ spring:
     name: demo
   profiles:
     active: @activatedProperties@
-
-springdoc:
-  swagger-ui:
-    filter: true
-  api-docs:
-    path: /api-docs

@@ -20,7 +20,7 @@ public class DemoGrpcAuthInterceptor implements ServerInterceptor {
 
         if (key == null || key.isBlank()) {
             status = Status.UNAUTHENTICATED.withDescription("Authorization token is missing");
-        } else if (!key.startsWith(GrpcConstant.JWT_BEARER_PREFIX)) {
+        } else if (!key.startsWith(DemoGrpcConstant.JWT_BEARER_PREFIX)) {
             status = Status.UNAUTHENTICATED.withDescription("Invalid authorization token type");
         } else {
             Jws<Claims> jws = null;

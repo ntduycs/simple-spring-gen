@@ -34,7 +34,7 @@ public class KafkaConsumerConfig {
         configMap.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "latest");
         configMap.put(JsonDeserializer.TRUSTED_PACKAGES, "*");
 
-        return new DefaultKafkaConsumerFactory<>(props);
+        return new DefaultKafkaConsumerFactory<>(configMap);
     }
 
     @Bean("DemoKafkaListenerContainerFactory")
