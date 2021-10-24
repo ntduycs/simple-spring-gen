@@ -1,5 +1,5 @@
 {
-  "name": "spring-codegen",
+  "name": "simple-spring-gen",
   "description": "Simple Spring Boot code generator",
   "version": "1.0.0",
   "main": "lib/index.js",
@@ -12,8 +12,16 @@
     "java",
     "maven",
     "spring",
-    "codegen"
+    "codegen",
+    "grpc",
+    "kafka",
+    "starter",
+    "boilerplate"
   ],
+  "bugs": {
+    "email": "ntduy.cs@gmail.com",
+    "url": "https://github.com/ntduycs/simple-spring-gen/issues"
+  },
   "homepage": "https://github.com/ntduycs/simple-spring-gen#readme",
   "repository": "github:ntduycs/simple-spring-gen",
   "dependencies": {
