@@ -1,11 +1,5 @@
 server:
   port: 8000
-  error:
-    include-message: always
-    include-exception: true
-    include-binding-errors: always
-    whitelabel:
-      enabled: false
 
 spring:
   cloud:

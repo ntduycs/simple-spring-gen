@@ -25,7 +25,7 @@ public class DemoGrpcServer extends SampleServiceGrpc.SampleServiceImplBase {
     @Override
     public void createSample(CreateSampleRequest request, StreamObserver<CreateSampleResponse> responseObserver) {
         try {
-            og.info(sampleService.execute("hello world"));
+            log.info(sampleService.execute("hello world"));
 
             responseObserver.onNext(CreateSampleResponse.newBuilder()
                     .setSuccess(true)

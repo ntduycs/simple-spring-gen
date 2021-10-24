@@ -1,11 +1,5 @@
 server:
   port: ${PORT}
-  error:
-    include-message: always
-    include-exception: true
-    include-binding-errors: always
-    whitelabel:
-      enabled: false
 
 spring:
   config:
