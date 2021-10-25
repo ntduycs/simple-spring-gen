@@ -2,8 +2,8 @@ package com.example.demo.kafka.producer;
 
 import com.example.demo.kafka.DemoKafkaCommand;
 import com.example.demo.kafka.DemoKafkaTopic;
-import com.example.demo.kafka.message.SampleCommandMessage;
-import com.example.demo.kafka.message.SampleTrackingMessage;
+import com.example.demo.kafka.message.SampleCmdMessage;
+import com.example.demo.kafka.message.SampleTrackMessage;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.support.SendResult;
@@ -25,7 +25,7 @@ public class DemoKafkaProducer {
     }
 
     public void sendSampleCommandMessage() {
-        SampleCommandMessage message = SampleCommandMessage.newBuilder()
+        SampleCmdMessage message = SampleCmdMessage.newBuilder()
                 .setCommand(DemoKafkaCommand.INSERT_USER)
                 .setFirstname("Duy")
                 .setLastname("Nguyen Thanh")
@@ -35,7 +35,7 @@ public class DemoKafkaProducer {
     }
 
     public void sendSampleTrackingMessage() {
-        SampleTrackingMessage message = SampleTrackingMessage.newBuilder()
+        SampleTrackMessage message = SampleTrackMessage.newBuilder()
                 .setFirstname("Duy")
                 .setLastname("Nguyen Thanh")
                 .build();

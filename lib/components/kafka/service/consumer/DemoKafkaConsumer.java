@@ -1,8 +1,8 @@
 package com.example.demo.kafka.consumer;
 
 import com.example.demo.kafka.DemoKafkaTopic;
-import com.example.demo.kafka.message.SampleCommandMessage;
-import com.example.demo.kafka.message.SampleTrackingMessage;
+import com.example.demo.kafka.message.SampleCmdMessage;
+import com.example.demo.kafka.message.SampleTrackMessage;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.log4j.Log4j2;
@@ -25,7 +25,7 @@ public class DemoKafkaConsumer {
     }
 
     @KafkaHandler
-    public void consumeDemoCommandMessage(@Payload SampleCommandMessage commandRequest) {
+    public void consumeDemoCommandMessage(@Payload SampleCmdMessage commandRequest) {
         log.info("Consume {} with command {} and content {} {}",
                 commandRequest.getClass().getSimpleName(),
                 commandRequest.getCommand(),
@@ -34,7 +34,7 @@ public class DemoKafkaConsumer {
     }
 
     @KafkaHandler
-    public void consumerDemoTrackingMessage(@Payload SampleTrackingMessage trackingRequest) {
+    public void consumerDemoTrackingMessage(@Payload SampleTrackMessage trackingRequest) {
         log.info("Consume {} with content {} {}",
                 trackingRequest.getClass().getSimpleName(),
                 trackingRequest.getFirstname(),
