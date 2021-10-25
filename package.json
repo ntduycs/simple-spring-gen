@@ -1,7 +1,7 @@
 {
   "name": "simple-spring-gen",
   "description": "Simple Spring Boot code generator",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "main": "lib/index.js",
   "license": "MIT",
   "author": {
