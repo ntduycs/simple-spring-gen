@@ -4,6 +4,12 @@
 
 [![npm Package](https://img.shields.io/npm/v/simple-spring-gen.svg?style=flat-square)](https://www.npmjs.org/package/simple-spring-gen)
 
+## System Requirements
+
+- `node`: v8.0.0+ - `sudo apt install node`
+- `npm`: v6.0.0+ - `sudo apt install npm`
+- `npx`: installed - `sudo npm i -g npx`
+
 ## :cloud: Quick Start
 
 The quickest way to get started is use `npx` and pass in the required parameters of the project you want to create.
