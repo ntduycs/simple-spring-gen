@@ -4,7 +4,7 @@ import com.example.demo.grpc.util.DemoGrpcExceptionUtil;
 import com.example.demo.proto.CreateSampleRequest;
 import com.example.demo.proto.CreateSampleResponse;
 import com.example.demo.proto.SampleServiceGrpc;
-import com.example.demo.service.SampleService;
+import com.example.demo.grpc.service.DemoGrpcService;
 import io.grpc.stub.StreamObserver;
 import lombok.extern.log4j.Log4j2;
 import net.devh.boot.grpc.server.service.GrpcService;
@@ -16,17 +16,15 @@ import net.devh.boot.grpc.server.service.GrpcService;
 @GrpcService
 public class DemoGrpcServer extends SampleServiceGrpc.SampleServiceImplBase {
 
-    private final SampleService sampleService;
+    private final DemoGrpcService demoGrpcService;
 
-    public DemoGrpcServer(SampleService sampleService) {
-        this.sampleService = sampleService;
+    public DemoGrpcServer(DemoGrpcService demoGrpcService) {
+        this.demoGrpcService = demoGrpcService;
     }
 
     @Override
     public void createSample(CreateSampleRequest request, StreamObserver<CreateSampleResponse> responseObserver) {
         try {
-            log.info(sampleService.execute("hello world"));
-
             responseObserver.onNext(CreateSampleResponse.newBuilder()
                     .setSuccess(true)
                     .setData(CreateSampleResponse.Data.newBuilder()

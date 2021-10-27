@@ -13,7 +13,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 @SuperBuilder(builderMethodName = "newBuilder", setterPrefix = "set")
-public class SampleTrackingMessage implements Serializable {
+public class SampleTrackMessage implements Serializable {
 
     private String firstname;
     private String lastname;

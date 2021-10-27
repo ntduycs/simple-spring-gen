@@ -1,19 +1,10 @@
 server:
-  port: 8000
+  port: 9000
 
 spring:
   cloud:
     config:
       enabled: false
-
-security:
-  oauth2:
-    client:
-      client-id: WebClient
-      client-secret: W20e20b
-    resource:
-      user-info-uri: http://localhost:9000/uaa/oauth/token
-      check-token-endpoint-url: http://localhost:9000/uaa/oauth/check_token
 
 
 

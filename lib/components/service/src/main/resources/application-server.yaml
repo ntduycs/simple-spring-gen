@@ -10,12 +10,3 @@ spring:
       profile: ${CLOUD_CONFIG_PROFILE}
       label: ${CLOUD_CONFIG_LABEL}
       fail-fast: true
-
-security:
-  oauth2:
-    client:
-      client-id: ${OAUTH2_CLIENT_ID}
-      client-secret: ${OAUTH2_CLIENT_SECRET}
-    resource:
-      user-info-uri: ${OAUTH2_USER_INFO_URI}
-      check-token-endpoint-url: ${OAUTH2_CHECK_TOKEN_ENDPOINT_URL}

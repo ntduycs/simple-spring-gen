@@ -1,4 +1,4 @@
-package com.example.demo.domain.repository;
+package com.example.demo.domain.repository.dsl;
 
 import com.example.demo.domain.entity.QSampleEntity;
 import com.example.demo.domain.entity.SampleEntity;

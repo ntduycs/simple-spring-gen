@@ -14,7 +14,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 @SuperBuilder(builderMethodName = "newBuilder", setterPrefix = "set")
-public class SampleCommandMessage implements Serializable {
+public class SampleCmdMessage implements Serializable {
     private DemoKafkaCommand command;
 
     private String firstname;
