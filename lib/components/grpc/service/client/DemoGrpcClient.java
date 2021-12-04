@@ -8,7 +8,6 @@ import com.google.common.util.concurrent.Futures;
 import com.google.common.util.concurrent.ListenableFuture;
 import io.grpc.stub.StreamObserver;
 import lombok.extern.log4j.Log4j2;
-import org.checkerframework.checker.nullness.compatqual.NullableDecl;
 import org.springframework.stereotype.Service;
 
 import java.util.concurrent.Executor;
@@ -68,7 +67,7 @@ public class DemoGrpcClient {
 
         Futures.addCallback(future, new FutureCallback<>() {
             @Override
-            public void onSuccess(@NullableDecl CreateSampleResponse createSampleResponse) {
+            public void onSuccess(CreateSampleResponse createSampleResponse) {
                 log.info("Done");
             }
 
